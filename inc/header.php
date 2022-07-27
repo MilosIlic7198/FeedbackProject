@@ -1,4 +1,7 @@
 <?php include 'config/database.php'; ?>
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +20,7 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
       <div class="container">
         <a
-          href="#"
+          href="index.php"
           class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
         >
           <img
@@ -51,6 +54,27 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.php">About</a>
+            </li>
+            <li class="nav-item">
+
+              <?php 
+              if(isset($_SESSION['user_id']))
+              {
+              ?>
+
+              <br><p><?php echo $_SESSION['user_email']; ?></p>
+              <a class="nav-link" href="inc/sign_out.php">Sign Out</a>
+
+              <?php
+              } else {
+              ?>
+
+              <a class="nav-link" href="sign_user.php">Sign In / Sign Up</a>
+
+              <?php
+              }
+              ?>
+              
             </li>
           </ul>
         </div>

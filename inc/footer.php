@@ -7,7 +7,7 @@
       >
         <div class="col-md-4 d-flex align-items-center">
           <a
-            href="#"
+            href="index.php"
             class="mb-3 me-2 mb-md-0 text-black text-decoration-none lh-1"
           >
             <img
